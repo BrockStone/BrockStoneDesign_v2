@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       build: ['Gruntfile.js', 'src/**/*.js']
     },
 
-    // configure uglify to minify js files --->
+    // configure uglify to minify js files
     uglify: {
       options: {
         banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // compile less stylesheets to css --->
+    // compile less stylesheets to css 
     less: {
       build: {
         files: {
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // configure cssmin to minify css files --->
+    // configure cssmin to minify css files 
     cssmin: {
       options: {
         banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
@@ -58,9 +58,13 @@ module.exports = function(grunt) {
         }
       }
     }
-
-
   });
+
+  // +*+*+*+*+*+*+*+*+*+*+*+*+
+  //    Register My Tasks
+  // +*+*+*+*+*+*+*+*+*+*+*+*+
+  
+  grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'less']);
 
   // +*+*+*+*+*+*+*+*+*+*+*+*+
   //    Load Grunt Plugins
