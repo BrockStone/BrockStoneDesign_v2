@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 
       // When this task is run, lint the Gruntfile and all js files in src
       build: ['Gruntfile.js', 'src/**/*.js']
-    }
+    },
 
     // configure uglify to minify js files --->
     uglify: {
@@ -36,7 +36,17 @@ module.exports = function(grunt) {
           'dist/js/magic.min.js': 'src/js/magic.js'
         }
       }
+    },
+
+    // compile less stylesheets to css --->
+    less: {
+      build: {
+        files: {
+          'dist/css/pretty.css': 'src/css/pretty.less'
+        }
+      }
     }
+    
   });
 
   // +*+*+*+*+*+*+*+*+*+*+*+*+
